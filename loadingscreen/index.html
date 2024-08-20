@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/loader.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link
+
+    />
+    <title>loadingscreen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <video autoplay loop muted loading="lazy" style="height: 100vh; width: 100%; object-fit: fill; position: absolute; top: 0; left: 0">
+      <source src="assets/video/loading.mp4" type="video/mp4" />
+    </video>
+
+
+
+
+    <div class="videobox">
+      <video id="mainplayer">
+        <source src="assets/media/showcase.mp4" type="video/mp4" />
+      </video>
+
+    </div>
+
+
+
+    <div class="loader">
+      <canvas width="200" height="200"></canvas>
+      <p id="loadProgress" style="font-family: GothamProMedium">80%</p>
+    </div>
+
+    <div class="texture"></div>
+
+    <script src="assets/js/loader.js"></script>
+    <script>
+
+    </script>
+
+    <audio id="loading" loop autoplay src="assets/song/loading.mp3"></audio>
+
+
+    <script>
+      var play = true;
+
+      var myAudio = document.getElementById("loading");
+
+      function onKeyDown(event) {
+        switch (event.keyCode) {
+          case 32:
+            if (play) {
+              myAudio.pause();
+              play = false;
+            } else {
+              myAudio.play();
+              play = true;
+            }
+            break;
+        }
+        return false;
+      }
+
+      window.addEventListener("keydown", onKeyDown, false);
+    </script>
+
+
+
+
+  </body>
+</html>
